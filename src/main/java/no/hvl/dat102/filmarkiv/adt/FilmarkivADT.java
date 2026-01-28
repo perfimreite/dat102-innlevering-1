@@ -1,3 +1,8 @@
+package no.hvl.dat102.filmarkiv.adt;
+
+import no.hvl.dat102.filmarkiv.impl.Film;
+import no.hvl.dat102.filmarkiv.impl.Sjanger;
+
 public interface FilmarkivADT {
     /**
      * Hente en film med gitt nr fra arkivet
