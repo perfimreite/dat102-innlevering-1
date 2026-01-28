@@ -22,7 +22,6 @@ public class FilmarkivTest {
         assertEquals(0, arkiv2.antall());
     }
 
-    /* 2. Når vi legger til én film skal antall() øke til 1 */
     @Test
     void testLeggTilFilm() {
         Film f = new Film(1, "Paramount", "The Godfather", 1972, Sjanger.DRAMA, "Paramount Pictures");
@@ -34,7 +33,6 @@ public class FilmarkivTest {
         assertEquals(1, arkiv2.antall());
     }
 
-    /* 3. finnFilm skal returnere null når filmen ikke finnes */
     @Test
     void testFinnFilmReturnererNull() {
         assertNull(arkiv1.finnFilm(99));
@@ -42,7 +40,6 @@ public class FilmarkivTest {
         assertNull(arkiv2.finnFilm(99));
     }
 
-    /* 4. slettFilm skal returnere false når filmen ikke finnes */
     @Test
     void testSlettFilmReturnererFalse() {
         assertFalse(arkiv1.slettFilm(99));
@@ -50,3 +47,4 @@ public class FilmarkivTest {
         assertFalse(arkiv2.slettFilm(99));
     }
 }
+
