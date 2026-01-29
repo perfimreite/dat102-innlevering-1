@@ -62,28 +62,19 @@ public class Meny {
                     System.out.print("Title (or part of title): ");
                     String delstreng = s.nextLine();
 
-                    Film[] filmer = filmarkiv.soekTittel(delstreng);
                     System.out.println("Matches: ");
-                    for (Film film : filmer) {
-                        System.out.println("  " + film.getTittel());
-                    }
-                    System.out.println();
+                    tekstgr.skrivUtFilmDelstrengITittel(filmarkiv, delstreng);
                     break;
                 }
                 case "3": {
                     System.out.print("Producer (or part of producer name): ");
                     String delstreng = s.nextLine();
 
-                    Film[] filmer = filmarkiv.soekProdusent(delstreng);
-                    System.out.println("Matches: ");
-                    for (Film film : filmer) {
-                        System.out.println("  " + film.getTittel() + ": " + film.getProdusent());
-                    }
-                    System.out.println();
+                    tekstgr.skrivUtFilmProdusent(filmarkiv, delstreng);
                     break;
                 }
                 case "4": {
-                    System.out.println("Amount of films stored: " + filmarkiv.antall());
+                    tekstgr.skrivUtStatistikk(filmarkiv);
                     break;
                 }
             }

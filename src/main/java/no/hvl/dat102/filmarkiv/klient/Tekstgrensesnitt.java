@@ -14,20 +14,20 @@ public class Tekstgrensesnitt {
         int filmnr = s.nextInt();
         s.nextLine();
 
-        System.out.println("Produsent: ");
+        System.out.println("Producer: ");
         String produsent = s.nextLine();
 
-        System.out.println("Tittel: ");
+        System.out.println("Title: ");
         String tittel = s.nextLine();
 
-        System.out.println("År: ");
+        System.out.println("Year: ");
         int aar = s.nextInt();
         s.nextLine();
 
-        System.out.println("Sjanger: ");
+        System.out.println("Genre: ");
         Sjanger sjanger = Sjanger.valueOf(s.nextLine());
 
-        System.out.println("Selskap: ");
+        System.out.println("Company: ");
         String selskap = s.nextLine();
 
         Film film = new Film(filmnr, produsent, tittel, aar, sjanger, selskap);
@@ -41,30 +41,28 @@ public class Tekstgrensesnitt {
     public void skrivUtFilmDelstrengITittel(FilmarkivADT arkiv, String delstreng) {
         Film[] filmer = arkiv.soekTittel(delstreng);
 
-        System.out.print("Antall filmer med " + delstreng + "i tittelen: ");
+        System.out.println("Films with `" + delstreng + "` in title: ");
         for (Film film : filmer) {
-            System.out.print(film.getTittel());
+            System.out.println(film.getTittel());
         }
-        System.out.println();
     }
 
     public void skrivUtFilmProdusent(FilmarkivADT arkiv, String delstreng) {
         Film[] filmer = arkiv.soekProdusent(delstreng);
 
-        System.out.print("Antall filmer med produsent " + delstreng + ": ");
+        System.out.println("Films with producer `" + delstreng + "`: ");
         for (Film film : filmer) {
-            System.out.print(film.getTittel());
+            System.out.println(film.getProdusent() + ": " + film.getTittel());
         }
-        System.out.println();
     }
 
     public void skrivUtStatistikk(FilmarkivADT arkiv) {
         int antallFilmer = arkiv.antall();
-        System.out.println("Antall filmer: " + antallFilmer);
+        System.out.println("Amount of films: " + antallFilmer);
 
         for (Sjanger sjanger : Sjanger.values()) {
             int antallFilmerMedSjanger = arkiv.antall();
-            System.out.println("Antall filmer med sjanger " + sjanger.name() + ": " + antallFilmer);
+            System.out.println("Amount of films with genre " + sjanger.name() + ": " + antallFilmer);
         }
     }
 }
